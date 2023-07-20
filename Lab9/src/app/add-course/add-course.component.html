@@ -1,0 +1,12 @@
+<h2>Add Course</h2>
+<form (ngSubmit)="addCourse()">
+  <div>
+    <label>Code:</label>
+    <input type="text" [(ngModel)]="course.code" name="code" required>
+  </div>
+  <div>
+    <label>Title:</label>
+    <input type="text" [(ngModel)]="course.title" name="title" required>
+  </div>
+  <button type="submit">Add Course</button>
+</form>

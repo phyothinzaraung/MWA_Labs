@@ -1,0 +1,12 @@
+<h2>Update Course</h2>
+<form (ngSubmit)="updateCourse()">
+  <div>
+    <label>Code:</label>
+    <input type="text" [(ngModel)]="course.code" name="code" required>
+  </div>
+  <div>
+    <label>Title:</label>
+    <input type="text" [(ngModel)]="course.title" name="title" required>
+  </div>
+  <button type="submit">Update Course</button>
+</form>
