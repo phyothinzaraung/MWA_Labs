@@ -1,5 +1,0 @@
-What is the best way to handle I/O intensive tasks in Node?
-
-Node.js architecture is well desinged to process I/O tasks such as http request and response, file read and wirte, and database things as 
-I/O tasks happens asynchronusly in a non-blocking fashion. And they use events to signal when those operations are complete. So, Node.js is
-very efficient in handling I/O intensive tasks.
