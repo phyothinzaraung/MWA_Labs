@@ -1,0 +1,13 @@
+What is the best way to handle CPU-intensive tasks in Node?
+
+Although Node.js has hidden threads, we cannot use them to offload CPU-intensive tasks such as complex calculations, image resizing, or
+video compression. If we do this operations in main thread, it will block the other operations until it is done.
+
+The way to solve this problem is to put those CPU intensive tasks to worker thread. 
+For example, if we have a server task that needs to calculate heavy crypto computation. If we do this on main thread (even loop), that 
+essentially block my event loop and my server is not able to process other tasks. So, when we move this task to worker thread, the server 
+will be responsive and able to process other tasks and requests.
+
+We can process any custom CPU-intensive task in many ways: 
+• Cloning Child Process
+• Using Worker Threads
