@@ -1,0 +1,13 @@
+Explain in detail Node thread system?
+
+Node.js runs javascript code in single thread, that means one task can process at a time. However, Node.js itself is multi-threaded and
+provides hidden threads through "libuv" library which include Event Loop (Main Thread) and Threadpool.
+
+The event loop is what allows Node.js to perform non-blocking I/O operations by offloading operations to the system kernel whenever possible.
+ref: node.js doc
+
+Node IO thread pool is multi-threaded execution model where threads are pre-allocated and kept on hold until a thread is needed, and saving
+the overhead of thread allocation. It's the fastest way to run multi-threaded code. A thread executes one task and when it is done, return to
+the pool and back on hold.
+
+The default number of pre-allocated pool is 4 worker thread.
